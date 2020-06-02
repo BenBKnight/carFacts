@@ -3,6 +3,8 @@ const LocalStrategy = require("passport-local").Strategy;
 
 const db = require("../models");
 
+const test_const = 3;
+
 // Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
 passport.use(
   new LocalStrategy(
@@ -20,7 +22,7 @@ passport.use(
         // If there's no user with the given email
         if (!dbUser) {
           return done(null, false, {
-            message: "Incorrect email."
+            message: 'Incorrect email.'
           });
         }
         // If there is a user with the given email, but the password the user gives us is incorrect
