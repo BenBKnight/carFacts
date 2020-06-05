@@ -13,12 +13,14 @@ $(document).ready(() => {
     };
 
     if (!userData.email || !userData.password) {
+      console.log('hit')
       return;
     }
     // If we have an email and password, run the signUpUser function
     signUpUser(userData.email, userData.password);
     emailInput.val("");
     passwordInput.val("");
+    console.log("signed up")
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
@@ -29,7 +31,7 @@ $(document).ready(() => {
       password: password
     })
       .then(() => {
-        window.location.replace("/members");
+        window.location.assign("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
