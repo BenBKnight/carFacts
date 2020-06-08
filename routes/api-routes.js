@@ -2,7 +2,9 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
-module.exports = function(app) {
+
+
+module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -49,5 +51,26 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
+  });
+
+  //Route to get all vehicles
+  app.get("/api/allVehicles", (req, res) => {
+    db.Vehicle.findAll({}).then(result => res.json(result));
+  });
+
+  // POST route for saving a new post
+  app.post("/api/postVehicle", function (req, res) {
+    console.log(req.body);
+    db.Vehicle.create({
+      type: req.body.type,
+      make: req.body.make,
+      model: req.body.model,
+      year: req.body.year,
+      vin: req.body.vin,
+      mileage: req.body.mileage,
+    })
+      .then(function (dbPost) {
+        res.json(dbPost);
+      });
   });
 };

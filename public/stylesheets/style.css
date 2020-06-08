@@ -2,3 +2,22 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+.button {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.vehicle {
+  padding: 10px;
+  margin: 10px;
+  background-color: #e8f9ff;
+}

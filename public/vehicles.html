@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Passport Authentication</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link href="stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/logout">
+        Logout
+      </a>
+    </div>
+  </div>
+</nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Vehicles: </h2>
+        <hr>
+        <div id="vehicle-area"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- form new vehicle -->
+  <div class = "container">
+  <form id="vehicleForm">
+    <div class="form-group">
+      <div class="form-group">
+        <label for="category">Select Category:</label>
+        <select class="custom-select" id="type">
+          <option value="Car">Car</option>
+          <option value="Truck">Truck</option>
+          <option value="Motorcycle">Motorcycle</option>
+        </select>
+      </div>
+      <label for="Make">Make:</label>
+      <input type="text" class="form-control" id="make">
+      <br />
+      <label for="Model">Model:</label>
+      <textarea class="form-control" rows="1" id="model"></textarea>
+      <br />
+      <label for="Year">Year:</label>
+      <textarea class="form-control" rows="1" id="year"></textarea>
+      <br />
+      <label for="VIN">VIN:</label>
+      <textarea class="form-control" rows="1" id="vin"></textarea>
+      <br />
+      <label for="Mileage">Mileage:</label>
+      <textarea class="form-control" rows="1" id="mileage"></textarea>
+      <br />
+      <button type="submit" class="btn btn-success submit btn-lg">Submit</button>
+    </div>
+  </form>
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/vehicles.js"></script>
+
+</body>
+
+</html>
