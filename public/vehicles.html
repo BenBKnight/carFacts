@@ -11,58 +11,77 @@
 
 <body>
   <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/logout">
+          Logout
+        </a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h2>Vehicles: </h2>
         <hr>
-        <div id="vehicle-area"></div>
+        <div class="container">
+          <div class="row mt-4">
+            <div class="col-md-4">
+              <div class="form-group">
+                <select class="custom-select" id="category">
+                  <option selected value="">All Types</option>
+                  <option value="car">Car</option>
+                  <option value="truck">Truck</option>
+                  <option value="motorcycle">Motorcycle</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row mt-4">
+              <div class="col-md-4">
+                <div id="vehicleContainer"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- form new vehicle -->
-  <div class = "container">
-  <form id="vehicleForm">
-    <div class="form-group">
-      <div class="form-group">
-        <label for="category">Select Category:</label>
-        <select class="custom-select" id="type">
-          <option value="Car">Car</option>
-          <option value="Truck">Truck</option>
-          <option value="Motorcycle">Motorcycle</option>
-        </select>
-      </div>
-      <label for="Make">Make:</label>
-      <input type="text" class="form-control" id="make">
-      <br />
-      <label for="Model">Model:</label>
-      <textarea class="form-control" rows="1" id="model"></textarea>
-      <br />
-      <label for="Year">Year:</label>
-      <textarea class="form-control" rows="1" id="year"></textarea>
-      <br />
-      <label for="VIN">VIN:</label>
-      <textarea class="form-control" rows="1" id="vin"></textarea>
-      <br />
-      <label for="Mileage">Mileage:</label>
-      <textarea class="form-control" rows="1" id="mileage"></textarea>
-      <br />
-      <button type="submit" class="btn btn-success submit btn-lg">Submit</button>
+    <!-- form new vehicle -->
+    <div class="container">
+      <form id="vehicleForm">
+        <div class="form-group">
+          <div class="form-group">
+            <label for="category">Select Category:</label>
+            <select class="custom-select" id="type">
+              <option value="Car">Car</option>
+              <option value="Truck">Truck</option>
+              <option value="Motorcycle">Motorcycle</option>
+            </select>
+          </div>
+          <label for="Make">Make:</label>
+          <input type="text" class="form-control" id="make">
+          <br />
+          <label for="Model">Model:</label>
+          <textarea class="form-control" rows="1" id="model"></textarea>
+          <br />
+          <label for="Year">Year:</label>
+          <textarea class="form-control" rows="1" id="year"></textarea>
+          <br />
+          <label for="VIN">VIN:</label>
+          <textarea class="form-control" rows="1" id="vin"></textarea>
+          <br />
+          <label for="Mileage">Mileage:</label>
+          <textarea class="form-control" rows="1" id="mileage"></textarea>
+          <br />
+          <button type="submit" class="btn btn-success submit btn-lg">Submit</button>
+        </div>
+      </form>
     </div>
-  </form>
-</div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/vehicles.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/vehicles.js"></script>
 
 </body>
 

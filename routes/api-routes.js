@@ -73,4 +73,41 @@ module.exports = function (app) {
         res.json(dbPost);
       });
   });
+
+  // DELETE route for deleting posts
+  app.delete("/api/vehicles/:id", function (req, res) {
+    db.Vehicle.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function (dbVehicle) {
+        res.json(dbVehicle);
+      });
+  });
+
+  // Get route for returning posts of a specific type
+  app.get("/api/allVehicles/type/:type", function (req, res) {
+    db.Vehicle.findAll({
+      where: {
+        type: req.params.type
+      }
+    })
+      .then(function (dbVehicle) {
+        res.json(dbVehicle);
+      });
+  });
+
+  // PUT route for updating posts
+  app.put("/api/vehicles/", function (req, res) {
+    db.Vehicle.update(req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      })
+      .then(function (dbVehicle) {
+        res.json(dbVehicle);
+      });
+  });
 };
