@@ -5,3 +5,8 @@ $(document).ready(() => {
     $(".member-name").text(data.email);
   });
 });
+const logoutBtn = $(".logoutBtn");
+logoutBtn.on("click", event => {
+  event.preventDefault();
+  window.location.replace("/logout");
+});
