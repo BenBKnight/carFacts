@@ -8,7 +8,7 @@ const passport = require("../config/passport");
 
 // View members vehicles
 router.get("/vehicles", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/vehicles.html"));
+    res.render("vehicles");
 });
 
 //Route to get all vehicles
