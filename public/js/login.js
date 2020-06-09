@@ -29,7 +29,8 @@ $(document).ready(() => {
       password: password
     })
       .then(() => {
-        window.location.replace("/members");
+        console.log("hit");
+        window.location.assign("/members");
         // If there's an error, log the error
       })
       .catch(err => {
