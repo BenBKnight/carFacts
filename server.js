@@ -1,6 +1,7 @@
 // Npm packages
 const express = require("express");
 const session = require("express-session");
+const db = require("./models");
 
 // // Requiring passport as we've configured it
 const passport = require("./config/passport");
@@ -31,6 +32,12 @@ const routes = require("./routes/index");
 app.use(routes);
 
 // Sever Listener
-app.listen(PORT, () => {
-  console.log("Server listening on: http://localhost:" + PORT);
+db.sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      PORT,
+      PORT
+    );
+  });
 });
