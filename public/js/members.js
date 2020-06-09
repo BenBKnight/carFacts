@@ -10,3 +10,12 @@ logoutBtn.on("click", event => {
   event.preventDefault();
   window.location.replace("/logout");
 });
+
+// CLick Listener for vehicle button
+const vehicleBtn = $("#vehicleButton");
+vehicleBtn.on("click", () => {
+  console.log("button clicked");
+  window.location.replace("/vehicles");
+  // If there's an error, handle it by throwing up a bootstrap alert
+  console.log("changed pages");
+});
