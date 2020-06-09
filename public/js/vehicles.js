@@ -1,6 +1,6 @@
 $(document).ready(() => {
   // Gets an optional query string from our url (i.e. ?post_id=23)
-//   const url = window.location.search;
+  // const url = window.location.search;
   let vehicleId;
   // Sets a flag for whether or not we're updating a vehicle to be false initially
   const updating = false;
