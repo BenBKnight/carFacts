@@ -1,14 +1,23 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
-// const passport = require("../config/passport");
+// Requiring path to so we can use relative routes to our HTML files
+const path = require("path");
+const app = require("express");
+const router = app.Router();
+const passport = require("../config/passport");
+
+// View members vehicles
+router.get("/vehicles", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/vehicles.html"));
+});
 
 //Route to get all vehicles
-app.get("/api/allVehicles", (req, res) => {
+router.get("/api/allVehicles", (req, res) => {
     db.Vehicle.findAll({}).then(result => res.json(result));
 });
 
 // POST route for saving a new post
-app.post("/api/postVehicle", function (req, res) {
+router.post("/api/postVehicle", function (req, res) {
     console.log(req.body);
     db.Vehicle.create({
         type: req.body.type,
@@ -24,7 +33,7 @@ app.post("/api/postVehicle", function (req, res) {
 });
 
 // DELETE route for deleting posts
-app.delete("/api/vehicles/:id", function (req, res) {
+router.delete("/api/vehicles/:id", function (req, res) {
     db.Vehicle.destroy({
         where: {
             id: req.params.id
@@ -36,7 +45,7 @@ app.delete("/api/vehicles/:id", function (req, res) {
 });
 
 // Get route for returning posts of a specific type
-app.get("/api/allVehicles/type/:type", function (req, res) {
+router.get("/api/allVehicles/type/:type", function (req, res) {
     db.Vehicle.findAll({
         where: {
             type: req.params.type
@@ -47,15 +56,17 @@ app.get("/api/allVehicles/type/:type", function (req, res) {
         });
 });
 
-// PUT route for updating posts
-app.put("/api/vehicles/", function (req, res) {
-    db.Vehicle.update(req.body,
-        {
-            where: {
-                id: req.body.id
-            }
-        })
-        .then(function (dbVehicle) {
-            res.json(dbVehicle);
-        });
-});
+// // PUT route for updating posts
+// router.put("/api/vehicles/", function (req, res) {
+//     db.Vehicle.update(req.body,
+//         {
+//             where: {
+//                 id: req.body.id
+//             }
+//         })
+//         .then(function (dbVehicle) {
+//             res.json(dbVehicle);
+//         });
+// });
+
+module.exports = router;
