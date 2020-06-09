@@ -1,6 +1,7 @@
 const app = require("express");
 const router = app.Router();
 const passport = require("../config/passport");
+const db = require("../models");
 
 router.get("/maintenance", (req, res) => {
   // res.sendFile(path.join(__dirname, "../public/maintenance.html"));
