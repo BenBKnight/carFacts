@@ -1,59 +1,56 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 // Requiring path to so we can use relative routes to our HTML files
-const path = require("path");
+// const path = require("path");
 const app = require("express");
 const router = app.Router();
-const passport = require("../config/passport");
+// const passport = require("../config/passport");
 
 // View members vehicles
 router.get("/vehicles", (req, res) => {
-    res.render("vehicles");
+  res.render("vehicles");
 });
 
 //Route to get all vehicles
 router.get("/api/allVehicles", (req, res) => {
-    db.Vehicle.findAll({}).then(result => res.json(result));
+  db.Vehicle.findAll({}).then(result => res.json(result));
 });
 
 // POST route for saving a new post
-router.post("/api/postVehicle", function (req, res) {
-    console.log(req.body);
-    db.Vehicle.create({
-        type: req.body.type,
-        make: req.body.make,
-        model: req.body.model,
-        year: req.body.year,
-        vin: req.body.vin,
-        mileage: req.body.mileage,
-    })
-        .then(function (dbPost) {
-            res.json(dbPost);
-        });
+router.post("/api/postVehicle", (req, res) => {
+  console.log(req.body);
+  db.Vehicle.create({
+    type: req.body.type,
+    make: req.body.make,
+    model: req.body.model,
+    year: req.body.year,
+    vin: req.body.vin,
+    mileage: req.body.mileage
+  }).then(dbPost => {
+    res.json(dbPost);
+  });
 });
 
 // DELETE route for deleting posts
-router.delete("/api/vehicles/:id", function (req, res) {
-    db.Vehicle.destroy({
-        where: {
-            id: req.params.id
-        }
-    })
-        .then(function (dbVehicle) {
-            res.json(dbVehicle);
-        });
+router.delete("/api/vehicles/:id", (req, res) => {
+  db.Vehicle.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(dbVehicle => {
+    res.json(dbVehicle);
+  });
 });
 
 // Get route for returning posts of a specific type
-router.get("/api/allVehicles/type/:type", function (req, res) {
-    db.Vehicle.findAll({
-        where: {
-            type: req.params.type
-        }
-    })
-        .then(function (dbVehicle) {
-            res.json(dbVehicle);
-        });
+router.get("/api/allVehicles/type/:type", (req, res) => {
+  db.Vehicle.findAll({
+    where: {
+      type: req.params.type
+    }
+  }).then(dbVehicle => {
+    res.json(dbVehicle);
+  });
 });
 
 // // PUT route for updating posts
