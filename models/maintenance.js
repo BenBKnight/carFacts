@@ -22,11 +22,15 @@ module.exports = function(sequelize, DataTypes) {
     jobDate: {
       type: DataTypes.DATEONLY
     },
-
-    vehicle:{
-      type: DataTypes.STRING
-    }
   });
   
+  Maintenance.associate = function(models) {
+    Maintenance.belongsTo(models.Vehicle, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
   return Maintenance;
 };
