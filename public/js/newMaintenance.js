@@ -1,15 +1,17 @@
-async function getVehicles(){
+async function listVehicleNames(){
   const result = await $.ajax({
     url: "/api/allVehicles",
     type: "GET"
   });
-  console.log(result);
-  return result;
+  result.forEach(vehicle => {
+    $("#vehicle").append(`<option id=${vehicle.id}>${vehicle.make} ${vehicle.model} - ${vehicle.vin}</option>`)
+  });
 };
 
 $(document).ready(() => {
   
-  getVehicles();
+  listVehicleNames();
+
   $("#submit").click(async function() {
     try {
       event.preventDefault();
