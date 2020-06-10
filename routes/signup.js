@@ -12,7 +12,10 @@ router.get("/signup", (req, res) => {
 router.post("/api/signup", (req, res) => {
   db.User.create({
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    location: req.body.location
   })
     .then(() => {
       res.redirect(307, "/api/login");

@@ -22,6 +22,7 @@ router.get("/api/user_data", (req, res) => {
   } else {
     // Otherwise send back the user's email and id
     res.json({
+      firstName: req.user.firstName,
       email: req.user.email,
       id: req.user.id
     });
