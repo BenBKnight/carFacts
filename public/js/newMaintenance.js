@@ -1,4 +1,15 @@
+async function getVehicles(){
+  const result = await $.ajax({
+    url: "/api/allVehicles",
+    type: "GET"
+  });
+  console.log(result);
+  return result;
+};
+
 $(document).ready(() => {
+  
+  getVehicles();
   $("#submit").click(async function() {
     try {
       event.preventDefault();
