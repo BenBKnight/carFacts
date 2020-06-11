@@ -1,69 +1,74 @@
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="/logout">
                 Logout
             </a>
         </div>
-    </div>
 </nav>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <h2>Vehicles: </h2>
-            <hr>
-            <div class="container">
-                <div class="row mt-4">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <select class="custom-select" id="category">
-                                <option selected value="">All Types</option>
-                                <option value="car">Car</option>
-                                <option value="truck">Truck</option>
-                                <option value="motorcycle">Motorcycle</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row mt-4">
-                        <div class="col-md-4">
-                            <div id="vehicleContainer"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+<div>
+<div class="section">
+    <div class="container">
+        <h2 class="title">Vehicles: </h2>
+        <hr>
+        <div class="form-group">
+            <select class="custom-select" id="category">
+                <option selected value="">All Types</option>
+                <option value="car">Car</option>
+                <option value="truck">Truck</option>
+                <option value="motorcycle">Motorcycle</option>
+            </select>
+        </div>
+
+        <div class="container">
+            <div id="vehicleContainer"></div>
         </div>
     </div>
-
+</div>
     <!-- form new vehicle -->
-    <div class="container">
+    <div class="section">
         <form id="vehicleForm">
             <div class="form-group">
-                <div class="form-group">
-                    <label for="category">Select Category:</label>
-                    <select class="custom-select" id="type">
-                        <option value="Car">Car</option>
-                        <option value="Truck">Truck</option>
-                        <option value="Motorcycle">Motorcycle</option>
-                    </select>
+                <div class="container">
+                    <div class="form-group">
+                        <label for="category">Select Category:</label>
+                        <select class="custom-select" id="type">
+                            <option value="Car">Car</option>
+                            <option value="Truck">Truck</option>
+                            <option value="Motorcycle">Motorcycle</option>
+                        </select>
+                    </div>
                 </div>
-                <label for="Make">Make:</label>
-                <input type="text" class="form-control" id="make">
-                <br />
-                <label for="Model">Model:</label>
-                <textarea class="form-control" rows="1" id="model"></textarea>
-                <br />
-                <label for="Year">Year:</label>
-                <textarea class="form-control" rows="1" id="year"></textarea>
-                <br />
-                <label for="VIN">VIN:</label>
-                <textarea class="form-control" rows="1" id="vin"></textarea>
-                <br />
-                <label for="Mileage">Mileage:</label>
-                <textarea class="form-control" rows="1" id="mileage"></textarea>
-                <br />
-                <button type="submit" class="btn btn-success submit btn-lg">Submit</button>
+
+                <div class="container">
+                    <label for="Make">Make:</label>
+                    <input type="text" class="input form-control" id="make">
+                    <br />
+                </div>
+                <div class="container">
+                    <label for="Model">Model:</label>
+                    <textarea class="input form-control" rows="1" id="model"></textarea>
+                    <br />
+                </div>
+                <div class="container">
+
+                    <label for="Year">Year:</label>
+                    <textarea class="input form-control" rows="1" id="year"></textarea>
+                    <br />
+                </div>
+                <div class="container">
+
+                    <label for="VIN">VIN:</label>
+                    <textarea class="input form-control" rows="1" id="vin"></textarea>
+                    <br />
+                </div>
+                <div class="container">
+
+                    <label for="Mileage">Mileage:</label>
+                    <textarea class="input form-control" rows="1" id="mileage"></textarea>
+                    <br />
+                </div>
+                <button type="submit" class="button btn btn-success submit btn-lg">Submit</button>
             </div>
         </form>
     </div>
