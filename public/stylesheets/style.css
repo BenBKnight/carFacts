@@ -2,3 +2,27 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+.button {
+  margin-top: .5rem;
+}
+.container {
+  border: 3px;
+  border-color: red;
+  border-style: dashed;
+}
+.navbar {
+  border: 3px;
+  border-color: blue;
+  border-style: dashed;
+}
+.card {
+  border: 3px;
+  border-color: orange;
+  border-style: dashed;
+}
+.image {
+  max-width: 400px;
+}
+.is-clickable {
+  cursor: pointer;
+}

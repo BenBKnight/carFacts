@@ -1,9 +1,9 @@
 // Dependencies
 // =============================================================
 
-// // This may be confusing but here Sequelize (capital) references the standard library
+// This may be confusing but here Sequelize (capital) references the standard library
 // const Sequelize = require("sequelize");
-// // sequelize (lowercase) references our connection to the DB.
+// sequelize (lowercase) references our connection to the DB.
 // const sequelize = require("../config/config.json");
 
 module.exports = function(sequelize, DataTypes) {
