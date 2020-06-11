@@ -26,7 +26,7 @@ router.post("/api/maintenance", (req, res) => {
       milage: req.body.milage,
       parts: req.body.parts,
       jobDate: req.body.jobDate,
-      vehicle: req.body.vehicle,
+      VehicleId: req.body.VehicleId,
     })
     .then(() => {
       res.status(200).end();

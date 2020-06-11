@@ -32,7 +32,7 @@ const routes = require("./routes/index");
 app.use(routes);
 
 // Sever Listener
-db.sequelize.sync({force:true}).then(() => {
+db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",

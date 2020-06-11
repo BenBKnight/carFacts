@@ -26,7 +26,9 @@ module.exports = function(sequelize, DataTypes) {
   
   Maintenance.associate = function(models) {
     Maintenance.belongsTo(models.Vehicle, {
-      foreignKey: 'vehiclefk'
+      foreignKey: {
+        allowNull: false
+      }
     });
   };
 

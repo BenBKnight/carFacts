@@ -6,7 +6,7 @@ async function listVehicleNames(){
   });
   //Appending vehicle info to the dropdown menu
   result.forEach(vehicle => {
-    $("#vehicle").append(`<option id=${vehicle.id}>${vehicle.make} ${vehicle.model} - ${vehicle.vin}</option>`)
+    $("#vehicle").append(`<option value=${vehicle.id}>${vehicle.make} ${vehicle.model} - ${vehicle.vin}</option>`)
   });
 };
 
@@ -23,7 +23,7 @@ $(document).ready(() => {
         description: $("#jobDescription").val().trim(),
         milage: parseInt($("#milage").val().trim()),
         parts: $("#parts").val().trim(),
-        vehiclefk: 2,
+        VehicleId: $("#vehicle").val(),
       };
       
       // Sending information to the database
@@ -31,7 +31,7 @@ $(document).ready(() => {
         url: "/api/maintenance",
         type: "POST",
         data: maint
-      })
+      });
 
       // Re-directing user back to the maintenance page for the car
       location.pathname = "/maintenance";
