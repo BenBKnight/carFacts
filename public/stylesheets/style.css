@@ -39,3 +39,8 @@ form.login {
 .container-wrench{
   padding-top: 2rem;
 }
+
+.form-date{
+  display: flex;
+  justify-content: space-between;
+}
