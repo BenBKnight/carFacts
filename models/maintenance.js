@@ -21,9 +21,9 @@ module.exports = function(sequelize, DataTypes) {
 
     jobDate: {
       type: DataTypes.DATEONLY
-    },
+    }
   });
-  
+
   Maintenance.associate = function(models) {
     Maintenance.belongsTo(models.Vehicle, {
       foreignKey: {

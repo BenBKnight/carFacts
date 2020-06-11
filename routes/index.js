@@ -4,7 +4,7 @@ const router = app.Router();
 const login = require("./login.routes");
 const signUp = require("./signup");
 const member = require("./member");
-const maintenance = require("./maintenance")
+const maintenance = require("./maintenance");
 const vehicle = require("./vehicle");
 
 router.use(login);
