@@ -1,42 +1,48 @@
-<div class="section">
-  <form>
-    <div class="container">
+<div class="section columns">
+
+  <div class="column">
+    <h3 class="is-size-3">Maintenance For</h3>
+    <div class="select">
+      <select id="vehicle">
+        <option value="null">Select Vehicle</option>
+      </select>
+    </div>
+  </div>
+
+  <form class="column is-three-fifths is-desktop">
+    <div>
       <div class="form-group">
         <label for="jobName">Job Name:</label>
         <textarea class="input form-control" id="jobName" rows="1" placeholder="eg. Replaced Break Pads"></textarea>
       </div>
     </div>
-    <div class="container">
+    <div>
       <div class="form-group">
         <label for="jobDescription">Job Description:</label>
-        <textarea class="input form-control" id="jobDescription" rows="3"></textarea>
+        <textarea class="input form-control" id="jobDescription" rows="4"></textarea>
       </div>
     </div>
-    <div class="container">
+    <div>
       <div class="form-group">
         <label for="milage">Milage:</label>
         <textarea class="input form-control" id="milage" rows="1"></textarea>
       </div>
     </div>
-    <div class="container">
+    <div>
       <div class="form-group">
         <label for="parts">Parts:</label>
         <textarea class="input form-control" id="parts" rows="1"></textarea>
       </div>
     </div>
-    <div class="container">
-      <div class="form-group">
-        <label for="vehicle">Vehicle:</label>
-        <select class="input form-control" id="vehicle"></select>
-      </div>
-    </div>
-    <div class="container">
+    <div>
       <div class="form-group">
         <label for="date">Job Date:</label>
         <textarea class="input form-control" id="date" rows="1"></textarea>
       </div>
     </div>
-    <button type="submit" class="button btn btn-primary" id="submit">Submit</button>
+    <div class="container-center">
+      <button type="submit" class="button btn btn-primary has-background-info-dark has-text-info-light" id="submit">Add Maintenance</button>
+    </div>
   </form>
 </div>
 

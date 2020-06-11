@@ -26,3 +26,8 @@ form.login {
 .is-clickable {
   cursor: pointer;
 }
+
+.container-center{
+  display: flex;
+  justify-content: center;
+}
