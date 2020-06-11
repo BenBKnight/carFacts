@@ -29,16 +29,12 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Vehicle.associate = function(models) {
+  //Vehicles Association
+  Vehicle.associate = models => {
+    Vehicle.belongsTo(models.User, { foreignKey: { allowNull: false } });
     Vehicle.hasMany(models.Maintenance, {
       onDelete: "cascade"
     });
-  };
-
-  //Vehicles Association
-  Vehicle.associate = models => {
-    //Vehicles Association
-    Vehicle.belongsTo(models.User, { foreignKey: { allowNull: false } });
   };
   return Vehicle;
 };
