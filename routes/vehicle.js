@@ -16,6 +16,31 @@ router.get("/api/allVehicles", (req, res) => {
   db.Vehicle.findAll({}).then(result => res.json(result));
 });
 
+router.get("/vehiclefind/:userid", (req, res) => {
+  const userId = req.params.userid;
+  db.Vehicle.findAll({
+    where: {
+      UserId: userId
+    }
+  })
+  .then(result => {
+    console.log(result);
+    res.send(result);
+  });
+});
+
+router.get("/vehicles/:userid", (req, res) => {
+  const userId = req.params.userid;
+  db.Vehicle.findAll({
+    where: {
+      UserId: userId
+    }
+  })
+  .then(result => {
+    res.render("vehicleDisplay");
+  });
+});
+
 // POST route for saving a new post
 router.post("/api/postVehicle", (req, res) => {
   console.log(req.body);
