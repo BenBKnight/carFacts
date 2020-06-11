@@ -5,16 +5,16 @@ form.login {
 .button {
   margin-top: .5rem;
 }
-.container {
+/* .container {
   border: 3px;
   border-color: red;
   border-style: dashed;
-}
-.navbar {
+} */
+/* .navbar {
   border: 3px;
   border-color: blue;
   border-style: dashed;
-}
+} */
 .card {
   border: 3px;
   border-color: orange;

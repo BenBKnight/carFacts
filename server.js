@@ -1,6 +1,7 @@
 // Npm packages
 const express = require("express");
 const session = require("express-session");
+const path = require('path');
 const db = require("./models");
 
 // // Requiring passport as we've configured it
@@ -14,6 +15,7 @@ const PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use("/vehicles", express.static("public"));
 
 // We need to use sessions to keep track of our user's login status
 app.use(

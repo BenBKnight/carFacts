@@ -28,11 +28,11 @@ router.get("/vehiclefind/:userid", (req, res) => {
   });
 });
 
-router.get("/vehicles/:userid", (req, res) => {
-  const userId = req.params.userid;
+router.get("/vehicles/:id", (req, res) => {
+  const vehicleId = req.params.id;
   db.Vehicle.findAll({
     where: {
-      UserId: userId
+      id: vehicleId
     }
   }).then(() => res.render("vehicleDisplay"));
 });
