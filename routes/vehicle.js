@@ -19,13 +19,15 @@ router.get("/api/allVehicles", (req, res) => {
 // POST route for saving a new post
 router.post("/api/postVehicle", (req, res) => {
   console.log(req.body);
+  console.log(req.user);
   db.Vehicle.create({
     type: req.body.type,
     make: req.body.make,
     model: req.body.model,
     year: req.body.year,
     vin: req.body.vin,
-    mileage: req.body.mileage
+    mileage: req.body.mileage,
+    UserId: req.user.id
   }).then(dbPost => {
     res.json(dbPost);
   });

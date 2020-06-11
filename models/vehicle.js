@@ -28,5 +28,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER
     }
   });
+  //Vehicles Association
+  Vehicle.associate = models => {
+    //Vehicles Association
+    Vehicle.belongsTo(models.User, { foreignKey: { allowNull: false } });
+  };
   return Vehicle;
 };
