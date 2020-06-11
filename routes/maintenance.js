@@ -1,6 +1,6 @@
 const app = require("express");
 const router = app.Router();
-const passport = require("../config/passport");
+// const passport = require("../config/passport");
 const db = require("../models");
 
 router.get("/maintenance", (req, res) => {
@@ -19,15 +19,14 @@ router.get("/maintenance/maintRecord", (req, res) => {
 });
 
 router.post("/api/maintenance", (req, res) => {
-  db.Maintenance
-    .create({
-      name: req.body.name,
-      description: req.body.description,
-      milage: req.body.milage,
-      parts: req.body.parts,
-      jobDate: req.body.jobDate,
-      vehicle: req.body.vehicle,
-    })
+  db.Maintenance.create({
+    name: req.body.name,
+    description: req.body.description,
+    milage: req.body.milage,
+    parts: req.body.parts,
+    jobDate: req.body.jobDate,
+    VehicleId: req.body.VehicleId
+  })
     .then(() => {
       res.status(200).end();
     })
@@ -37,9 +36,8 @@ router.post("/api/maintenance", (req, res) => {
 });
 
 router.get("/api/maintenance", (req, res) => {
-  db.Maintenance
-    .findAll()
-    .then((result) => {
+  db.Maintenance.findAll()
+    .then(result => {
       res.send(result);
     })
     .catch(() => res.status(401).json(err));
@@ -47,13 +45,11 @@ router.get("/api/maintenance", (req, res) => {
 
 router.get("/maintenance/:jobid", (req, res) => {
   const jobId = req.params.jobid;
-  db.Maintenance
-    .findAll({
-      where: {
-        id : jobId
-      }
-    })
-    .then(result => res.json(result))
+  db.Maintenance.findAll({
+    where: {
+      id: jobId
+    }
+  }).then(result => res.json(result));
 });
 
 module.exports = router;

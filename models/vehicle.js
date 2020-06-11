@@ -28,6 +28,13 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER
     }
   });
+
+  Vehicle.associate = function(models) {
+    Vehicle.hasMany(models.Maintenance, {
+      onDelete: "cascade"
+    });
+  };
+
   //Vehicles Association
   Vehicle.associate = models => {
     //Vehicles Association
