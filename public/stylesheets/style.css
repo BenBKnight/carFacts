@@ -31,3 +31,11 @@ form.login {
   display: flex;
   justify-content: center;
 }
+
+.img-wrench{
+  height: 10rem;
+}
+
+.container-wrench{
+  padding-top: 2rem;
+}
