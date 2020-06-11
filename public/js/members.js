@@ -1,16 +1,18 @@
-let memberId ;
+let memberId;
 
-async function getVehicles(){
+async function getVehicles() {
   console.log("working");
   const result = await $.ajax({
     url: `/vehiclefind/${memberId}`,
     method: "GET"
-  })
-  
-  result.forEach(vehicle => {
-    $("#vehicleDisplay").append(`<a href="/vehicles/${vehicle.id}" class="image is-is-5by4 container is-clickable"><img id="vehicleButton"  src="images/toyota.jpg"></a>`)
   });
-};
+
+  result.forEach(vehicle => {
+    $("#vehicleDisplay").append(
+      `<a href="/vehicles/${vehicle.id}" class="image is-is-5by4 container is-clickable"><img id="vehicleButton"  src="images/toyota.jpg"></a>`
+    );
+  });
+}
 
 $(document).ready(() => {
   // This file just does a GET request to figure out which user is logged in

@@ -22,8 +22,7 @@ router.get("/vehiclefind/:userid", (req, res) => {
     where: {
       UserId: userId
     }
-  })
-  .then(result => {
+  }).then(result => {
     console.log(result);
     res.send(result);
   });
@@ -35,10 +34,7 @@ router.get("/vehicles/:userid", (req, res) => {
     where: {
       UserId: userId
     }
-  })
-  .then(result => {
-    res.render("vehicleDisplay");
-  });
+  }).then(() => res.render("vehicleDisplay"));
 });
 
 // POST route for saving a new post
