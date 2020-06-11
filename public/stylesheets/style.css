@@ -37,10 +37,29 @@ form.login {
 }
 
 .container-wrench{
-  padding-top: 2rem;
+  padding-top: 4rem;
 }
 
 .form-date{
   display: flex;
   justify-content: space-between;
+}
+
+.background{
+  position: fixed;
+  background-color: rgb(18, 50, 156);
+  z-index: -3;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+
+.container-background{
+  background-color: rgba(255, 255, 255, .6);
+  border-radius: 3px;
 }

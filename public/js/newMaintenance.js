@@ -13,6 +13,7 @@ async function listVehicleNames() {
 }
 
 $(document).ready(() => {
+
   listVehicleNames();
 
   $("#submit").click(async () => {
@@ -34,7 +35,8 @@ $(document).ready(() => {
         parts: $("#parts")
           .val()
           .trim(),
-        VehicleId: $("#vehicle").val()
+        VehicleId: $("#vehicle").val(),
+        jobDate: `${$("#date-month").val()}-${$("#date-day").val()}-${$("#date-year").val()}`
       };
 
       // Sending information to the database
