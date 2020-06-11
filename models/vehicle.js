@@ -6,7 +6,7 @@
 // // sequelize (lowercase) references our connection to the DB.
 // const sequelize = require("../config/config.json");
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   const Vehicle = sequelize.define("Vehicle", {
     type: {
       type: DataTypes.STRING,
@@ -28,5 +28,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER
     }
   });
+  //Vehicles Association
+  Vehicle.associate = models => {
+    //Vehicles Association
+    Vehicle.belongsTo(models.User, { foreignKey: { allowNull: false } });
+  };
   return Vehicle;
 };
