@@ -60,3 +60,9 @@ html, body {
 .label, .button {
   margin-top: 1.5rem;
 }
+.is-underlined {
+  text-decoration: underline;
+}
+input {
+  text-align: center;
+}
