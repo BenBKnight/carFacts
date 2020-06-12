@@ -1,5 +1,13 @@
 $(document).ready(() => {
   const navbar = $(".nav-hide");
+  const logoutHide = $(".logoutHide");
+  const loginHide = $(".login-hide");
+  $(document).ready(() => {
+    loginHide.hide();
+  });
+  $(document).ready(() => {
+    logoutHide.hide();
+  });
   $(document).ready(() => {
     navbar.hide();
   });
@@ -41,4 +49,9 @@ $(document).ready(() => {
         console.log(err);
       });
   }
+});
+const signup = $(".signup-hide");
+signup.on("click", event => {
+  event.preventDefault();
+  window.location.assign("/signup");
 });

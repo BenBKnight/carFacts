@@ -1,5 +1,5 @@
 <div>
-  <div class="section">
+  <div class="section has-text-centered">
 
     <div class="container">
       <h2 class="title">Login Form</h2>
@@ -12,17 +12,17 @@
 
     <div class="container form-group">
       <label class="label" for="exampleInputPassword1">Password</label>
-      <input type="password" class="input form-control" id="password-input" placeholder="Password">
+      <input type="password" class="input loginInput form-control" id="password-input" placeholder="Password">
     </div>
 
     <div class="container">
-      <button type="submit" class="button btn btn-default">Login</button>
+      <div>
+        <button type="submit" class="button loginInput btn btn-default">Login</button>
+      </div>
+      {{!-- <button type="submit" class="button level-right loginInput buttonLogin btn btn-default">Sign up!</button> --}}
     </div>
 
     </form>
-
-    <br />
-    <p>Or sign up <a href="/signup">here</a></p>
   </div>
 
 </div>
