@@ -25,6 +25,5 @@ router.post("/api/login", passport.authenticate("local"), (req, res) => {
     id: req.user.id
   });
 });
-router.get("/db/testdata.json",)
 
 module.exports = router;
