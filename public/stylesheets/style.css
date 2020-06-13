@@ -10,6 +10,9 @@ form.login {
 }
 .navbar {
   background-color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  transform: scaleX(1.14)
 }
 .image {
   max-width: 400px;
@@ -17,8 +20,6 @@ form.login {
 .is-clickable {
   cursor: pointer;
 }
-
-.title-
 
 .container-center{
   display: flex;
@@ -108,4 +109,20 @@ input {
 }
 p {
   color: black;
+}
+label{
+  color: black;
+}
+.vehicle-style{
+  width: 50%;
+}
+.container-center-col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  .vehicle-style{
+    width: 90%;
+  }
 }
