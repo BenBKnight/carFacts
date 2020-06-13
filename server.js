@@ -14,6 +14,8 @@ const PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use("/vehicles", express.static("public"));
+app.use("testData", express.static("db"));
 
 // We need to use sessions to keep track of our user's login status
 app.use(
@@ -32,6 +34,7 @@ const routes = require("./routes/index");
 app.use(routes);
 
 // Sever Listener
+// { force: true } inside of sync function to reset tables accordingly
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(

@@ -23,24 +23,36 @@ router.get("/vehiclefind/:userid", (req, res) => {
       UserId: userId
     }
   }).then(result => {
-    console.log(result);
+    //console.log(result);
     res.send(result);
   });
 });
 
-router.get("/vehicles/:userid", (req, res) => {
-  const userId = req.params.userid;
+router.get("/vehicles/:id", (req, res) => {
+  const id = req.params.id;
   db.Vehicle.findAll({
     where: {
-      UserId: userId
+      id: id
     }
   }).then(() => res.render("vehicleDisplay"));
 });
 
+router.get("/vehicleid/:id", (req, res) => {
+  const vehicleId = req.params.id;
+  db.Vehicle.findAll({
+    where: {
+      id: vehicleId
+    }
+  }).then(result => {
+    // console.log(result);
+    res.send(result);
+  });
+});
+
 // POST route for saving a new post
 router.post("/api/postVehicle", (req, res) => {
-  console.log(req.body);
-  console.log(req.user);
+  //console.log(req.body);
+  //console.log(req.user);
   db.Vehicle.create({
     type: req.body.type,
     make: req.body.make,
@@ -48,6 +60,11 @@ router.post("/api/postVehicle", (req, res) => {
     year: req.body.year,
     vin: req.body.vin,
     mileage: req.body.mileage,
+    yearPurchased: req.body.yearPurchased,
+    condition: req.body.condition,
+    accidents: req.body.accidents,
+    numOfOwners: req.body.numOfOwners,
+    locationLastOwned: req.body.locationLastOwned,
     UserId: req.user.id
   }).then(dbPost => {
     res.json(dbPost);

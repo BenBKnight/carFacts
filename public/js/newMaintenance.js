@@ -34,7 +34,7 @@ $(document).ready(() => {
         parts: $("#parts")
           .val()
           .trim(),
-        VehicleId: $("#vehicle").val()
+        VehicleId: $("#vehicle").val(),
       };
 
       // Sending information to the database

@@ -1,18 +1,178 @@
-    <div class="section">
-        <div class="container">
-            <h2 class="title">Vehicles: </h2>
-            <hr>
-            <div class="form-group">
-                <select class="custom-select" id="category">
-                    <option selected value="">All Types</option>
-                    <option value="car">Car</option>
-                    <option value="truck">Truck</option>
-                    <option value="motorcycle">Motorcycle</option>
-                </select>
+<link href="../stylesheets/style.css" rel="stylesheet">
+<br>
+<br>
+<div class="tile is-ancestor">
+    <div class="tile is-vertical is-8">
+        <div class="tile">
+            <div class="tile is-parent">
+                <article class="tile is-child box">
+                    {{!-- <p class="title has-text-centered">Toyota</p> --}}
+                    {{!-- <p class="subtitle has-text-centered">Tacoma</p> --}}
+                    <br>
+                    <br>
+                    <br>
+                    <figure id="vehiclePic" class="image is-4by3">
+                        <img src="./images/toyota.jpg" />
+                    </figure>
+                </article>
             </div>
-
-            <div class="container">
-                <div id="vehicleContainer"></div>
+            <div class="tile is-parent is-vertical">
+                <article class="tile is-child box">
+                    <p class="title has-text-centered">Overview</p>
+                    <hr>
+                    <p class="subtitle"><Strong>Type: </Strong><span id="vehicleType"></span></p>
+                    <p class="subtitle"><Strong>Make: </Strong><span id="vehicleMake"></span></p>
+                    <p class="subtitle"><Strong>Model: </Strong><span id="vehicleModel"></span></p>
+                    <p class="subtitle"><Strong>Year: </Strong><span id="vehicleYear"></span></p>
+                    <p class="subtitle"><Strong>Mileage: </Strong><span id="vehicleMileage"></span></p>
+                    <p class="subtitle"><Strong>Vin: </Strong><span id="vehicleVin"></span></p>
+                </article>
+                <article class="tile is-child box">
+                    <p class="title has-text-centered">Title Information</p>
+                    <hr>
+                    <p class="subtitle"><Strong>Owner: </Strong><span id="owner"></span><span> </span><span id="lastName"></span></p>
+                    <p class="subtitle"><Strong>Year Purchased: </Strong><span id="yearPurchased"></span></p>
+                    <p class="subtitle"></p>
+                </article>
             </div>
         </div>
     </div>
+    <div class="tile is-parent">
+        <article class="tile is-child box">
+            <div class="content">
+                <p class="title has-text-centered">Quick Links</p>
+                <hr>
+                <p class="subtitle"><a href="#currentCondition" title="currentCondition">Current Condition of Vehicle</a></p>
+                <p class="subtitle"><a href="#historyOfVehicle" title="historyOfVehicle">History of Vehicle</a></p>
+                <p class="subtitle"><a href="#MaintenanceRecord" title="MaintenanceRecord">Maintenance Record</a></p>
+                <p class="subtitle"><a href="#AddNewMaintenance" title="AddNewMaintenance">Add New Maintenance</a></p>
+                <p class="subtitle"><a href="#CarMD" title="CarMD">CarMD</a></p>
+                <p class="subtitle"><a href="#KellyBlueBook" title="KellyBlueBook">Kelly Blue Book</a></p>
+            </div>
+        </article>
+    </div>
+</div>
+
+<div class="tile is-ancestor">
+    <div class="tile is-parent">
+        <article class="tile is-child box">
+            <p id="currentCondition" class="title has-text-centered">Current Condition</p>
+            <hr>
+            <div class="content">
+                <p class="subtitle"><Strong>Status: </Strong><span id="condition"></span></p>
+                <p class="subtitle"><span id="carCondition"></span></p>
+            </div>
+        </article>
+    </div>
+    <div class="tile is-parent is-8">
+        <article class="tile is-child box">
+            <p id="historyOfVehicle" class="title has-text-centered">Vehicle History</p>
+            <hr>
+            <div class="content">
+                <p class="subtitle"><Strong>Number of Accidents: </Strong><span id="accidents"></span></p>
+                <p class="subtitle"><Strong>Number of Previous Owners: </Strong><span id="numOfOwners"></span></p>
+                <p><Strong>Service History Reports: </Strong><span id="totalMaintenance"></span></p>
+                <p><Strong>Type: Personal Vehicle</Strong></p>
+                <p class="subtitle"><Strong>Location Last Owned: </Strong><span id="locationLastOwned"></span></p>
+            </div>
+        </article>
+    </div>
+</div>
+
+<div class="tile is-ancestor">
+    <div class="tile is-parent">
+        <article class="tile is-child box">
+            <p id="AddNewMaintenance" class="title has-text-centered">Add New Maintenance</p>
+            <hr>
+            <p class="subtitle has-text-centered">Have you made imporvements to your vehicle?</p>
+            <div class="content has-text-centered">
+                <button href="/newMaintenance" class="button is-info">Add New Maintenance</button>
+            </div>
+        </article>
+    </div>
+    <div class="tile is-parent is-8">
+        <article class="tile is-child box">
+            <p id="MaintenanceRecord" class="title has-text-centered">Maintenance Record</p>
+            <hr>
+            <div class="content">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            {{!-- <th><abbr title="Position">#</abbr></th> --}}
+                            <th>Job</th>
+                            <th><abbr title="Description">Description</abbr></th>
+                            <th><abbr title="Mileage">Mileage</abbr></th>
+                            <th><abbr title="Parts">Parts</abbr></th>
+                            <th><abbr title="Date">Date</abbr></th>
+                            <th>Link to More Information</th>
+                        </tr>
+                    <tbody id="tableBody">
+                        {{!-- Seeds for table --}}
+                        {{!-- <tr>
+                            <th>1</th>
+                            <td><a href="" title="Windshield">New Windshield</a>
+                            </td>
+                            <td>Old Windshield was damaged</td>
+                            <td>90,000</td>
+                            <td>Glass</td>
+                            <td>01/15/2020</td>
+                            <td><a href="" title="check it out">Click Here!</a></td>
+                        </tr> --}}
+                    </tbody>
+                    </thead>
+                </table>
+            </div>
+        </article>
+    </div>
+</div>
+
+
+
+<div class="tile is-parent is-12">
+    <article class="tile is-child box">
+        <p id="CarMD" class="title has-text-centered">CarMd</p>
+        <p class="subtitle has-text-centered">Suggested Maintenance</p>
+        <hr>
+        <div class="content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><abbr title="Position">#</abbr></th>
+                        <th>Job</th>
+                        <th><abbr title="Description">Description</abbr></th>
+                        <th><abbr title="Mileage">Mileage</abbr></th>
+                        <th><abbr title="Parts">Parts</abbr></th>
+                        <th><abbr title="Date">Date</abbr></th>
+                        <th>Link to More Information</th>
+                    </tr>
+                <tbody id="tableBodyCarMD">
+                    {{!-- <tr>
+                        <th>1</th>
+                        <td><a href="" title="Windshield">New Windshield</a>
+                        </td>
+                        <td>Old Windshield was damaged</td>
+                        <td>90,000</td>
+                        <td>Glass</td>
+                        <td>01/15/2020</td>
+                        <td><a href="" title="check it out">Click Here!</a></td>
+                    </tr> --}}
+                </tbody>
+                </thead>
+            </table>
+        </div>
+    </article>
+</div>
+</div>
+<div class="tile is-ancestor">
+    <div class="tile is-parent">
+        <article class="tile is-child box">
+            <p id="KellyBlueBook" class="title has-text-centered">Kelly Blue Book</p>
+            <p class="subtitle has-text-centered">Want to know the value of your vehicle?</p>
+            <hr>
+            <div class="content has-text-centered">
+                <p>Kelley Blue Book vehicle data, values, and content</p>
+            </div>
+        </article>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/vehicleDisplay.js" type="text/javascript"></script>
