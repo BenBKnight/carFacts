@@ -1,7 +1,7 @@
 let memberId;
 
 async function getVehicles() {
-  console.log("working");
+  //console.log("working");
   const result = await $.ajax({
     url: `/vehiclefind/${memberId}`,
     method: "GET"
@@ -27,12 +27,12 @@ $(document).ready(() => {
   });
   $.get("/api/user_data").then(data => {
     $(".member-name").text(data.firstName);
-    console.log(data.id);
+    //console.log(data.id);
     memberId = data.id;
     getVehicles();
   });
 });
-console.log(memberId);
+//console.log(memberId);
 
 const logoutBtn = $(".logoutBtn");
 logoutBtn.on("click", event => {

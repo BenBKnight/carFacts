@@ -25,7 +25,8 @@ if (process.env.JAWSDB_URL) {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-app.use(express.static("db"));
+app.use("/vehicles", express.static("public"));
+// app.use("/carmd", express.static("db"));
 
 // We need to use sessions to keep track of our user's login status
 app.use(
@@ -44,6 +45,7 @@ const routes = require("./routes/index");
 app.use(routes);
 
 // Sever Listener
+// { force: true } inside of sync function to reset tables accordingly
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(

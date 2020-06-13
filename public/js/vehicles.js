@@ -30,6 +30,11 @@ $(document).ready(() => {
   const mileageInput = $("#mileage");
   const vehicleForm = $("#vehicleForm");
   const type = $("#type");
+  const yearPurchased = $("#yearPurchased");
+  const condition = $("#condition");
+  const accidents = $("#accidents");
+  const numOfOwners = $("#numOfOwners");
+  const locationLastOwned = $("#locationLastOwned");
 
   // Adding an event listener for when the form is submitted
   $(vehicleForm).on("submit", event => {
@@ -45,7 +50,12 @@ $(document).ready(() => {
       model: modelInput.val().trim(),
       year: yearInput.val().trim(),
       vin: vinInput.val().trim(),
-      mileage: mileageInput.val().trim()
+      mileage: mileageInput.val().trim(),
+      yearPurchased: yearPurchased.val().trim(),
+      condition: condition.val().trim(),
+      accidents: accidents.val().trim(),
+      numOfOwners: numOfOwners.val().trim(),
+      locationLastOwned: locationLastOwned.val().trim()
     };
 
     console.log(newVehicle);
@@ -67,7 +77,7 @@ $(document).ready(() => {
       typeString = "/type/" + typeString;
     }
     $.get("/api/allVehicles" + typeString, data => {
-      console.log("Vehicles", data);
+      // console.log("Vehicles", data);
       vehicles = data;
       if (!vehicles || !vehicles.length) {
         displayEmpty();
@@ -182,6 +192,8 @@ $(document).ready(() => {
   function submitVehicle(vehicle) {
     $.post("/api/postVehicle", vehicle, () => {
       window.location.href = "/vehicles";
+    }).then(() => {
+      window.location.href = "/members";
     });
   }
 
