@@ -15,12 +15,9 @@ async function listVehicleNames() {
 $(document).ready(() => {
   const loginHide = $(".login-hide");
   const signupHide = $(".signup-hide");
-  $(document).ready(() => {
-    signupHide.hide();
-  });
-  $(document).ready(() => {
-    loginHide.hide();
-  });
+  
+  signupHide.hide();
+  loginHide.hide();
   listVehicleNames();
 
 
@@ -44,6 +41,7 @@ $(document).ready(() => {
           .val()
           .trim(),
         VehicleId: $("#vehicle").val(),
+        jobDate: `${$("#date-month").val()}-${$("#date-day").val()}-${$("#date-year").val()}`
       };
 
       // Sending information to the database
@@ -54,7 +52,7 @@ $(document).ready(() => {
       });
 
       // Re-directing user back to the maintenance page for the car
-      location.pathname = "/maintenance";
+      location.pathname = `/vehicles/${$("#vehicle").val()}`;
     } catch (error) {
       if (error) {
         throw error;

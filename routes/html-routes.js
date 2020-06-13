@@ -27,11 +27,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
-  app.get("/maintenance", (req, res) => {
+  app.get("/maintenance", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/maintenance.html"));
   });
 
-  app.get("/newMaintenance", (req, res) => {
+  app.get("/newMaintenance", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/newMaintenance.html"));
   });
 
