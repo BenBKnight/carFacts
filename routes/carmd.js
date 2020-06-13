@@ -7,7 +7,7 @@ const test = require("../db/testData");
 // });
 
 router.get("/carmd", (req, res) => {
-  console.log(test);
+  //console.log(test);
   res.send(test);
 });
 

@@ -51,8 +51,8 @@ router.get("/vehicleid/:id", (req, res) => {
 
 // POST route for saving a new post
 router.post("/api/postVehicle", (req, res) => {
-  //console.log(req.body);
-  //console.log(req.user);
+  console.log(req.body);
+  console.log(req.user);
   db.Vehicle.create({
     type: req.body.type,
     make: req.body.make,
@@ -67,6 +67,7 @@ router.post("/api/postVehicle", (req, res) => {
     locationLastOwned: req.body.locationLastOwned,
     UserId: req.user.id
   }).then(dbPost => {
+    console.log("Posting Vehicle");
     res.json(dbPost);
   });
 });

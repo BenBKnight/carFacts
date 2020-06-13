@@ -1,3 +1,6 @@
+const loginHide = $(".login-hide");
+const signupHide = $(".signup-hide");
+
 async function getVehicle() {
   const url = window.location.href.split("/");
   const id = url[url.length - 1];
@@ -70,7 +73,7 @@ async function getCarMD() {
     url: "/carmd",
     method: "GET"
   });
-  console.log(result);
+  //console.log(result);
   // Loop through Maintenance and append to table
   let num = 0;
   result.data.forEach(job => {
@@ -127,6 +130,8 @@ $("#newCarMaintenance").on("click", () => {
 });
 
 $(document).ready(() => {
+  signupHide.hide();
+  loginHide.hide();
   getCarMD();
   getMaintenance();
   setCondition();

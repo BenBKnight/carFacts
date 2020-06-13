@@ -9,7 +9,7 @@ form.login {
   color: white;
 }
 .navbar {
-  background-color: transparent;
+  background-color: white;
 }
 .image {
   max-width: 400px;
@@ -30,6 +30,7 @@ form.login {
   background-color: blue;
 }
 .backgroundImage {
+  background-attachment: fixed;
   background-image: url("../images/metal.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -38,10 +39,10 @@ form.login {
 html, body {
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, .6);
+  /* background-color: rgba(0, 0, 0, .6); */
 }
 .title, .subtitle, .label, .navbar-item {
-  color: white;
+  color: black;
 }
 .label, .button {
   margin-top: 1.5rem;

@@ -25,12 +25,8 @@ if (process.env.JAWSDB_URL) {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-<<<<<<< HEAD
 app.use("/vehicles", express.static("public"));
 // app.use("/carmd", express.static("db"));
-=======
-app.use(express.static("db"));
->>>>>>> master
 
 // We need to use sessions to keep track of our user's login status
 app.use(
