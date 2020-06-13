@@ -46,7 +46,7 @@ app.use(routes);
 
 // Sever Listener
 // { force: true } inside of sync function to reset tables accordingly
-db.sequelize.sync().then(() => {
+db.sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
