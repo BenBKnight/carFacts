@@ -125,6 +125,35 @@ async function setCondition() {
   }
 }
 
+async function setImage() {
+  const url = window.location.href.split("/");
+  const id = url[url.length - 1];
+  const result = await $.ajax({
+    url: `/vehicleid/${id}`,
+    method: "GET"
+  });
+  //console.log(result);
+  switch (result[0].type) {
+  case "Car":
+    $("#vehiclePic").append(
+      "<img src='./images/car.png' />"
+    );
+    break;
+
+  case "Motorcycle":
+    $("#vehiclePic").append(
+      "<img src='./images/motorcycle.png' />"
+    );
+    break;
+
+  case "Truck":
+    $("#vehiclePic").append(
+      "<img src='./images/truck.png' />"
+    );
+    break;
+  }
+}
+
 $("#newCarMaintenance").on("click", () => {
   location.pathname = "/newMaintenance";
 });
@@ -132,6 +161,7 @@ $("#newCarMaintenance").on("click", () => {
 $(document).ready(() => {
   signupHide.hide();
   loginHide.hide();
+  setImage();
   getCarMD();
   getMaintenance();
   setCondition();
