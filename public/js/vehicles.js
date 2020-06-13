@@ -1,4 +1,12 @@
 $(document).ready(() => {
+  const loginHide = $(".login-hide");
+  const signupHide = $(".signup-hide");
+  $(document).ready(() => {
+    signupHide.hide();
+  });
+  $(document).ready(() => {
+    loginHide.hide();
+  });
   // Gets an optional query string from our url (i.e. ?post_id=23)
   // const url = window.location.search;
   let vehicleId;
@@ -199,4 +207,9 @@ $(document).ready(() => {
       window.location.href = "/vehicles";
     });
   }
+});
+const logoutBtn = $(".logoutBtn");
+logoutBtn.on("click", event => {
+  event.preventDefault();
+  window.location.replace("/logout");
 });

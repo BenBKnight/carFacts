@@ -1,4 +1,16 @@
 $(document).ready(() => {
+  const navbar = $(".nav-hide");
+  const logoutHide = $(".logoutHide");
+  const signupHide = $(".signup-hide");
+  $(document).ready(() => {
+    signupHide.hide();
+  });
+  $(document).ready(() => {
+    logoutHide.hide();
+  });
+  $(document).ready(() => {
+    navbar.hide();
+  });
   // Getting references to our form and input
   const signUpForm = $("form.signup");
   const emailInput = $("input#email-input");
@@ -57,4 +69,9 @@ $(document).ready(() => {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
+});
+const loginBtn = $(".login-hide");
+loginBtn.on("click", event => {
+  event.preventDefault();
+  window.location.assign("/login");
 });

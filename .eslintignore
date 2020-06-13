@@ -1,6 +1,6 @@
 models/index.js
 node_modules
-db/testData.js
+db/testData.json
 routes/maintenance.js
 routes/index.js
 models/maintenance.js
