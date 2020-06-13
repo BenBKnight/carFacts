@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 app.use("/vehicles", express.static("public"));
-app.use("testData", express.static("db"));
+// app.use("/carmd", express.static("db"));
 
 // We need to use sessions to keep track of our user's login status
 app.use(

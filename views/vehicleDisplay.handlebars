@@ -86,7 +86,7 @@
             <hr>
             <p class="subtitle has-text-centered">Have you made imporvements to your vehicle?</p>
             <div class="content has-text-centered">
-                <button href="/newMaintenance" class="button is-info">Add New Maintenance</button>
+                <button id="newCarMaintenance" class="button is-info">Add New Maintenance</button>
             </div>
         </article>
     </div>
@@ -137,13 +137,10 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th><abbr title="Position">#</abbr></th>
-                        <th>Job</th>
                         <th><abbr title="Description">Description</abbr></th>
                         <th><abbr title="Mileage">Mileage</abbr></th>
-                        <th><abbr title="Parts">Parts</abbr></th>
-                        <th><abbr title="Date">Date</abbr></th>
-                        <th>Link to More Information</th>
+                        <th><abbr title="Info">More Information</abbr></th>
+                        <th><abbr title="Completion">Already Done?</abbr></th>
                     </tr>
                 <tbody id="tableBodyCarMD">
                     {{!-- <tr>

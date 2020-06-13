@@ -1,13 +1,5 @@
 
 const data = {
-    message: {
-        code: 0,
-        message: ok,
-        credentials: valid,
-        version: "v3.0.0",
-        endpoint: maint,
-        counter: 1
-    },
     data: [
         {
             desc: "Change Engine Oil and Filter",
