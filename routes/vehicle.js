@@ -73,17 +73,4 @@ router.get("/api/allVehicles/type/:type", (req, res) => {
   });
 });
 
-// // PUT route for updating posts
-// router.put("/api/vehicles/", function (req, res) {
-//     db.Vehicle.update(req.body,
-//         {
-//             where: {
-//                 id: req.body.id
-//             }
-//         })
-//         .then(function (dbVehicle) {
-//             res.json(dbVehicle);
-//         });
-// });
-
 module.exports = router;
