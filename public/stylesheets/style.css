@@ -126,3 +126,7 @@ label{
     width: 90%;
   }
 }
+
+.m-auto{
+  margin: auto;
+}
