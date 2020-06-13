@@ -8,8 +8,9 @@ async function getVehicles() {
   });
 
   result.forEach(vehicle => {
+    const vehicleName = vehicle.type;
     $("#vehicleDisplay").append(
-      `<a href="/vehicles/${vehicle.id}" class="image is-is-5by4 mb-2 container is-clickable"><img id="vehicleButton"  src="images/${vehicle.type}.png"></a>`
+      `<a href="/vehicles/${vehicle.id}" class="image is-is-5by4 mb-2 container is-clickable"><img id="vehicleButton"  src="images/${vehicleName.toLowerCase()}.png"></a>`
     );
   });
 }
