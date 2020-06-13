@@ -28,7 +28,7 @@ $(document).ready(() => {
   const yearInput = $("#year");
   const vinInput = $("#vin");
   const mileageInput = $("#mileage");
-  const vehicleForm = $("#vehicleForm");
+  const vehicleForm = $("#buttonADD");
   const type = $("#type");
   const yearPurchased = $("#yearPurchased");
   const condition = $("#condition");
@@ -37,7 +37,7 @@ $(document).ready(() => {
   const locationLastOwned = $("#locationLastOwned");
 
   // Adding an event listener for when the form is submitted
-  $(vehicleForm).on("submit", event => {
+  $(vehicleForm).on("click", event => {
     event.preventDefault();
     // Wont submit the vehicle if we are missing a body or a title
     if (!modelInput.val().trim() || !makeInput.val().trim()) {
