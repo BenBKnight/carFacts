@@ -10,6 +10,9 @@ form.login {
 }
 .navbar {
   background-color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  transform: scaleX(1.14)
 }
 .image {
   max-width: 400px;
