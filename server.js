@@ -1,7 +1,6 @@
 // Npm packages
 const express = require("express");
 const session = require("express-session");
-const path = require('path');
 const db = require("./models");
 
 // // Requiring passport as we've configured it
