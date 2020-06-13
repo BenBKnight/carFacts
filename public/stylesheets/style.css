@@ -5,20 +5,11 @@ form.login {
 .button {
   margin-top: .5rem;
 }
-/* .container {
-  border: 3px;
-  border-color: red;
-  border-style: dashed;
-} */
-/* .navbar {
-  border: 3px;
-  border-color: blue;
-  border-style: dashed;
-} */
-.card {
-  border: 3px;
-  border-color: orange;
-  border-style: dashed;
+.container {
+  color: white;
+}
+.navbar {
+  background-color: transparent;
 }
 .image {
   max-width: 400px;
@@ -27,9 +18,17 @@ form.login {
   cursor: pointer;
 }
 
+.title-
+
 .container-center{
   display: flex;
   justify-content: center;
+}
+
+.container-select{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .img-wrench{
@@ -42,6 +41,7 @@ form.login {
 
 .form-date{
   display: flex;
+  /* flex-direction: column; */
   justify-content: space-between;
 }
 
@@ -60,11 +60,51 @@ form.login {
 }
 
 .container-background{
-  background-color: rgba(255, 255, 255, .6);
+  background-color: rgba(255, 255, 255, 1);
   border-radius: 3px;
 }
 
 .title-row{
   display: flex;
   justify-content: space-between;
+}
+
+.loginInput {
+  text-align: center;
+}
+::-webkit-input-placeholder {
+  text-align: center;
+}
+:-moz-placeholder {
+  text-align: center;
+}
+.backColor {
+  background-color: blue;
+}
+.backgroundImage {
+  background-attachment: fixed;
+  background-image: url("../images/metal.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+html::after{
+  margin: 0;
+  padding: 0;
+  /* height: 100%; */
+  /* width: 100%; */
+  background-color: rgba(0, 0, 0, .6);
+}
+
+.title, .subtitle, .label, .navbar-item {
+  color: white;
+}
+.label, .button {
+  margin-top: 1.5rem;
+}
+.is-underlined {
+  text-decoration: underline;
+}
+input {
+  text-align: center;
 }

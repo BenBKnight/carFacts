@@ -1,5 +1,13 @@
 $(document).ready(() => {
   const navbar = $(".nav-hide");
+  const logoutHide = $(".logoutHide");
+  const loginHide = $(".login-hide");
+  $(document).ready(() => {
+    loginHide.hide();
+  });
+  $(document).ready(() => {
+    logoutHide.hide();
+  });
   $(document).ready(() => {
     navbar.hide();
   });
@@ -25,7 +33,14 @@ $(document).ready(() => {
     emailInput.val("");
     passwordInput.val("");
   });
-
+  const request = new Request("../../db/testdata.json");
+  fetch(request)
+    .then(resp => {
+      return resp.json();
+    })
+    .then(data => {
+      console.log(data);
+    });
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function loginUser(email, password) {
     $.post("/api/login", {
@@ -41,4 +56,9 @@ $(document).ready(() => {
         console.log(err);
       });
   }
+});
+const signup = $(".signup-hide");
+signup.on("click", event => {
+  event.preventDefault();
+  window.location.assign("/signup");
 });

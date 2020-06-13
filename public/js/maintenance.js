@@ -1,6 +1,13 @@
 $(document).ready(() => {
   const jobNames = $("#jobNames");
-
+  const loginHide = $(".login-hide");
+  const signupHide = $(".signup-hide");
+  $(document).ready(() => {
+    signupHide.hide();
+  });
+  $(document).ready(() => {
+    loginHide.hide();
+  });
   $.ajax({
     url: "/api/maintenance",
     type: "GET"

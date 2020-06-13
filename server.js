@@ -2,6 +2,7 @@
 const express = require("express");
 const session = require("express-session");
 const db = require("./models");
+const mysql = require("mysql");
 
 // // Requiring passport as we've configured it
 const passport = require("./config/passport");
@@ -10,6 +11,16 @@ const app = express();
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
 
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "password",
+    database: "carFacts"
+  });
+}
 // Creating express app and configuring middleware needed for authentication
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
