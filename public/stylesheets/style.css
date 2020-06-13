@@ -107,21 +107,20 @@ html, body {
 input {
   text-align: center;
 }
-
+p {
+  color: black;
+}
 label{
   color: black;
 }
-
 .vehicle-style{
   width: 50%;
 }
-
 .container-center-col{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 @media only screen and (max-width: 768px) {
   .vehicle-style{
     width: 90%;
