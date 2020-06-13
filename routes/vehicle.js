@@ -23,7 +23,6 @@ router.get("/vehiclefind/:userid", (req, res) => {
       UserId: userId
     }
   }).then(result => {
-    console.log(result);
     res.send(result);
   });
 });
@@ -39,8 +38,6 @@ router.get("/vehicles/:id", (req, res) => {
 
 // POST route for saving a new post
 router.post("/api/postVehicle", (req, res) => {
-  console.log(req.body);
-  console.log(req.user);
   db.Vehicle.create({
     type: req.body.type,
     make: req.body.make,
