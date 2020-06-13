@@ -1,21 +1,17 @@
 const app = require("express");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 const router = app.Router();
 // const passport = require("../config/passport");
 const db = require("../models");
 
-router.get("/maintenance", (req, res) => {
+router.get("/maintenance", isAuthenticated, (req, res) => {
   // res.sendFile(path.join(__dirname, "../public/maintenance.html"));
   res.render("maintenance");
 });
 
-router.get("/newMaintenance", (req, res) => {
+router.get("/newMaintenance", isAuthenticated, (req, res) => {
   // res.sendFile(path.join(__dirname, "../public/newMaintenance.html"));
   res.render("newMaintenance");
-});
-
-router.get("/maintenance/maintRecord", (req, res) => {
-  // res.sendFile(path.join(__dirname, "../public/maintRecord.html"));
-  res.render("maintRecord");
 });
 
 router.post("/api/maintenance", (req, res) => {
@@ -43,13 +39,18 @@ router.get("/api/maintenance", (req, res) => {
     .catch(() => res.status(401).json(err));
 });
 
-router.get("/maintenance/:jobid", (req, res) => {
+router.get("/maintenancefind/:jobid", (req, res) => {
   const jobId = req.params.jobid;
   db.Maintenance.findAll({
     where: {
       id: jobId
     }
-  }).then(result => res.json(result));
+  }).then(result => res.send(result))
+  .catch(() => res.status(401).json(err));
+});
+
+router.get("/maintenance/:jobid", (req, res) => {
+  res.render("maintRecord");
 });
 
 module.exports = router;

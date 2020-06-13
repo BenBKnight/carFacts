@@ -51,8 +51,6 @@ router.get("/vehicleid/:id", (req, res) => {
 
 // POST route for saving a new post
 router.post("/api/postVehicle", (req, res) => {
-  console.log(req.body);
-  console.log(req.user);
   db.Vehicle.create({
     type: req.body.type,
     make: req.body.make,
@@ -93,18 +91,5 @@ router.get("/api/allVehicles/type/:type", (req, res) => {
     res.json(dbVehicle);
   });
 });
-
-// // PUT route for updating posts
-// router.put("/api/vehicles/", function (req, res) {
-//     db.Vehicle.update(req.body,
-//         {
-//             where: {
-//                 id: req.body.id
-//             }
-//         })
-//         .then(function (dbVehicle) {
-//             res.json(dbVehicle);
-//         });
-// });
 
 module.exports = router;
