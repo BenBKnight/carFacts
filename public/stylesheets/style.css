@@ -9,7 +9,7 @@ form.login {
   color: white;
 }
 .navbar {
-  background-color: transparent;
+  background-color: white;
 }
 .image {
   max-width: 400px;
@@ -88,16 +88,14 @@ form.login {
   background-repeat: no-repeat;
   background-size: cover;
 }
-html::after{
-  margin: 0;
-  padding: 0;
-  /* height: 100%; */
-  /* width: 100%; */
-  background-color: rgba(0, 0, 0, .6);
+html, body {
+  height: 100%;
+  width: 100%;
+  /* background-color: rgba(0, 0, 0, .6); */
 }
 
 .title, .subtitle, .label, .navbar-item {
-  color: white;
+  color: black;
 }
 .label, .button {
   margin-top: 1.5rem;

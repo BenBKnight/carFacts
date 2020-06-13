@@ -33,14 +33,6 @@ $(document).ready(() => {
     emailInput.val("");
     passwordInput.val("");
   });
-  const request = new Request("../../db/testdata.json");
-  fetch(request)
-    .then(resp => {
-      return resp.json();
-    })
-    .then(data => {
-      console.log(data);
-    });
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function loginUser(email, password) {
     $.post("/api/login", {

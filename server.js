@@ -45,6 +45,7 @@ const routes = require("./routes/index");
 app.use(routes);
 
 // Sever Listener
+// { force: true } inside of sync function to reset tables accordingly
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(

@@ -52,7 +52,7 @@ $(document).ready(() => {
       });
 
       // Re-directing user back to the maintenance page for the car
-      location.pathname = "/maintenance";
+      location.pathname = `/vehicles/${$("#vehicle").val()}`;
     } catch (error) {
       if (error) {
         throw error;

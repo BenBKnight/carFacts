@@ -26,6 +26,21 @@ module.exports = function(sequelize, DataTypes) {
     },
     mileage: {
       type: DataTypes.INTEGER
+    },
+    yearPurchased: {
+      type: DataTypes.INTEGER
+    },
+    condition: {
+      type: DataTypes.STRING
+    },
+    accidents: {
+      type: DataTypes.INTEGER
+    },
+    numOfOwners: {
+      type: DataTypes.INTEGER
+    },
+    locationLastOwned: {
+      type: DataTypes.STRING
     }
   });
 
