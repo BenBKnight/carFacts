@@ -10,6 +10,7 @@ const app = express();
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
+
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
