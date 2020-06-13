@@ -13,7 +13,16 @@ async function listVehicleNames() {
 }
 
 $(document).ready(() => {
+  const loginHide = $(".login-hide");
+  const signupHide = $(".signup-hide");
+  $(document).ready(() => {
+    signupHide.hide();
+  });
+  $(document).ready(() => {
+    loginHide.hide();
+  });
   listVehicleNames();
+
 
   $("#submit").click(async () => {
     try {
@@ -53,3 +62,8 @@ $(document).ready(() => {
     }
   });
 }); //end doc ready
+const logoutBtn = $(".logoutBtn");
+logoutBtn.on("click", event => {
+  event.preventDefault();
+  window.location.replace("/logout");
+});

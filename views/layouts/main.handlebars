@@ -1,37 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="backgroundImage ">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>CarFacts</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-	<link href="stylesheets/style.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CarFacts</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
 <body class="container">
-	<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/members">
-      <img src="images/logo.png" width="40" height="28">
-    </a>
+  <nav class="navbar " role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/members">
+        <img src="images/logo.png" width="40" height="28">
+      </a>
 
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item nav-hide" href="/members">Home</a>
-      <a class="navbar-item nav-hide" href="/vehicles">Add Vehicles</a>
-      <a class="navbar-item nav-hide" href="/newMaintenance">Add Maintenance</a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+        data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
-		<div class="navbar-end">
-			<a class="navbar-item logoutBtn">Logout</a>
-		</div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item nav-hide" href="/members">Home</a>
+        <a class="navbar-item nav-hide" href="/vehicles">Add Vehicles</a>
+        <a class="navbar-item nav-hide" href="/newMaintenance">Add Maintenance</a>
+      </div>
+      <div class="navbar-end">
+        <a class="navbar-item logoutHide logoutBtn">Logout</a>
+        <a class="navbar-item signup-hide">Signup</a>
+        <a class="navbar-item login-hide">Login</a>
+
+      </div>
       {{!-- <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">More</a>
 
@@ -43,10 +47,10 @@
           <a class="navbar-item">Report an issue</a>
         </div>
       </div> --}}
-  </div>
-	</nav>
-	{{{ body }}}
-<script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    </div>
+  </nav>
+  {{{ body }}}
+  <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </body>
 
 </html>

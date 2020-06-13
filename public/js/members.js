@@ -17,6 +17,14 @@ async function getVehicles() {
 $(document).ready(() => {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
+  const loginHide = $(".login-hide");
+  const signupHide = $(".signup-hide");
+  $(document).ready(() => {
+    signupHide.hide();
+  });
+  $(document).ready(() => {
+    loginHide.hide();
+  });
   $.get("/api/user_data").then(data => {
     $(".member-name").text(data.firstName);
     console.log(data.id);
