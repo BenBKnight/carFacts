@@ -106,3 +106,6 @@ html, body {
 input {
   text-align: center;
 }
+p {
+  color: black;
+}
