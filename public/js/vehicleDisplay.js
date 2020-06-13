@@ -136,19 +136,19 @@ async function setImage() {
   switch (result[0].type) {
   case "Car":
     $("#vehiclePic").append(
-      "<img src='./images/car.png' />"
+      "<img src='./images/Car.png' />"
     );
     break;
 
   case "Motorcycle":
     $("#vehiclePic").append(
-      "<img src='./images/motorcycle.png' />"
+      "<img src='./images/Motorcycle.png' />"
     );
     break;
 
   case "Truck":
     $("#vehiclePic").append(
-      "<img src='./images/truck.png' />"
+      "<img src='./images/Truck.png' />"
     );
     break;
   }

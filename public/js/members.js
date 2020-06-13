@@ -9,7 +9,7 @@ async function getVehicles() {
 
   result.forEach(vehicle => {
     $("#vehicleDisplay").append(
-      `<a href="/vehicles/${vehicle.id}" class="image is-is-5by4 container is-clickable"><img id="vehicleButton"  src="images/toyota.jpg"></a>`
+      `<a href="/vehicles/${vehicle.id}" class="image is-is-5by4 mb-2 container is-clickable"><img id="vehicleButton"  src="images/${vehicle.type}.png"></a>`
     );
   });
 }
