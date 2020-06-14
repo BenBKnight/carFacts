@@ -191,9 +191,9 @@ $(document).ready(() => {
   // Submits a new vehicle and brings user to blog page upon completion
   function submitVehicle(vehicle) {
     $.post("/api/postVehicle", vehicle, () => {
-      window.location.href = "/vehicles";
+      // window.location.href = "/vehicles";
     }).then(() => {
-      window.location.href = "/members";
+      // window.location.href = "/members";
     });
   }
 
@@ -204,7 +204,7 @@ $(document).ready(() => {
       url: "/api/vehicles",
       data: vehicle
     }).then(() => {
-      window.location.href = "/vehicles";
+      // window.location.href = "/vehicles";
     });
   }
 });
