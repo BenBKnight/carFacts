@@ -37,8 +37,10 @@ async function getOwner() {
 }
 
 async function getMaintenance() {
+  const url = window.location.href.split("/");
+  const vehicleId = url[url.length - 1];
   const result = await $.ajax({
-    url: "/api/maintenance",
+    url: `/maintenancefind/${vehicleId}`,
     method: "GET"
   });
   // console.log(result);

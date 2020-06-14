@@ -1,7 +1,12 @@
 async function listVehicleNames() {
   //Getting all vehicles
+  const userId = await $.ajax({
+    url: "/api/user_data",
+    type: "GET"
+  });
+  console.log(userId);
   const result = await $.ajax({
-    url: "/api/allVehicles",
+    url: `/vehiclefind/${userId.id}`,
     type: "GET"
   });
   //Appending vehicle info to the dropdown menu
