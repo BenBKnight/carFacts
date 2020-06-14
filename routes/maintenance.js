@@ -53,4 +53,14 @@ router.get("/maintenance/:jobid", (req, res) => {
   res.render("maintRecord");
 });
 
+router.get("/maintenancefind/:vehicleid", (req, res) => {
+  const vehicleId = req.params.vehicleid;
+  db.Maintenance.findAll({
+    where: {
+      VehicleId: vehicleId
+    }
+  }).then(result => res.send(result))
+  .catch(() => res.status(401).json(err));
+});
+
 module.exports = router;
