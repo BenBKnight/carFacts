@@ -46,8 +46,8 @@ logoutBtn.on("click", event => {
 // CLick Listener for vehicle button
 const vehicleBtn = $("#vehicleButton");
 vehicleBtn.on("click", () => {
-  console.log("button clicked");
+  // console.log("button clicked");
   window.location.replace("/vehicles");
   // If there's an error, handle it by throwing up a bootstrap alert
-  console.log("changed pages");
+  // console.log("changed pages");
 });

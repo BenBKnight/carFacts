@@ -8,7 +8,7 @@ $(document).ready(() => {
     type: "GET"
   })
     .then(result => {
-      console.log(result[0].name);
+      // console.log(result[0].name);
       $("#jobName").append(result[0].name);
       $("#jobDate").append(`(${result[0].jobDate})`);
       $("#milage").append(`${result[0].milage}`);

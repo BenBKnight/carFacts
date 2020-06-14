@@ -40,10 +40,9 @@ async function getMaintenance() {
   const url = window.location.href.split("/");
   const vehicleId = url[url.length - 1];
   const result = await $.ajax({
-    url: `/maintenancefind/${vehicleId}`,
+    url: `/maintenancefindvehicle/${vehicleId}`,
     method: "GET"
   });
-  // console.log(result);
   // get total number of Maintenance
   const total = result.length.toString();
   // console.log(total);

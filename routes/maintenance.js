@@ -49,17 +49,19 @@ router.get("/maintenancefind/:jobid", (req, res) => {
   .catch(() => res.status(401).json(err));
 });
 
-router.get("/maintenance/:jobid", (req, res) => {
+router.get("/maintenance/:jobid", isAuthenticated, (req, res) => {
   res.render("maintRecord");
 });
 
-router.get("/maintenancefind/:vehicleid", (req, res) => {
+router.get("/maintenancefindvehicle/:vehicleid", (req, res) => {
   const vehicleId = req.params.vehicleid;
   db.Maintenance.findAll({
     where: {
       VehicleId: vehicleId
     }
-  }).then(result => res.send(result))
+  }).then(result => {
+    res.send(result);
+  })
   .catch(() => res.status(401).json(err));
 });
 

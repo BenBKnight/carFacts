@@ -1,5 +1,6 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 // Requiring path to so we can use relative routes to our HTML files
 // const path = require("path");
 const app = require("express");
@@ -7,7 +8,7 @@ const router = app.Router();
 // const passport = require("../config/passport");
 
 // View members vehicles
-router.get("/vehicles", (req, res) => {
+router.get("/vehicles", isAuthenticated, (req, res) => {
   res.render("vehicles");
 });
 
@@ -28,7 +29,7 @@ router.get("/vehiclefind/:userid", (req, res) => {
   });
 });
 
-router.get("/vehicles/:id", (req, res) => {
+router.get("/vehicles/:id", isAuthenticated, (req, res) => {
   const id = req.params.id;
   db.Vehicle.findAll({
     where: {
