@@ -58,7 +58,7 @@ $(document).ready(() => {
       locationLastOwned: locationLastOwned.val().trim()
     };
 
-    console.log(newVehicle);
+    // console.log(newVehicle);
 
     // If we're updating a vehicle run updatePost to update a vehicle
     // Otherwise run submitPost to create a whole new vehicle
@@ -191,9 +191,9 @@ $(document).ready(() => {
   // Submits a new vehicle and brings user to blog page upon completion
   function submitVehicle(vehicle) {
     $.post("/api/postVehicle", vehicle, () => {
-      // window.location.href = "/vehicles";
+      window.location.href = "/vehicles";
     }).then(() => {
-      // window.location.href = "/members";
+      window.location.href = "/members";
     });
   }
 
