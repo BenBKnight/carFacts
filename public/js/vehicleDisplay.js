@@ -57,14 +57,14 @@ async function getMaintenance() {
     const cell2 = row.insertCell(1);
     const cell3 = row.insertCell(2);
     const cell4 = row.insertCell(3);
-    const cell5 = row.insertCell(4);
-    const cell6 = row.insertCell(5);
+    // const cell5 = row.insertCell(4);
+    // const cell6 = row.insertCell(5);
     cell1.innerHTML = job.name;
-    cell2.innerHTML = job.description;
-    cell3.innerHTML = job.milage;
-    cell4.innerHTML = job.parts;
-    cell5.innerHTML = job.jobDate;
-    cell6.innerHTML = "<a href=" + "/maintenance/" + job.id + ">More info</a>";
+    // cell2.innerHTML = job.description;
+    cell2.innerHTML = job.milage;
+    // cell4.innerHTML = job.parts;
+    cell3.innerHTML = job.jobDate;
+    cell4.innerHTML = "<a href=" + "/maintenance/" + job.id + ">More info</a>";
     num++;
   });
 }
