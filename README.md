@@ -5,6 +5,7 @@
 <h1>Description</h1>
 
 CarFacts is your all-in-one app to track all maintenance and modifications done to your vehicle.
+
 <h1>Table of Contents</h1>
 
 <ul>
@@ -18,6 +19,7 @@ CarFacts is your all-in-one app to track all maintenance and modifications done 
 
 <h1>Installation</h1>
 
+<strong>Technologies:</strong> JQuery, Express, Sequelize, Passport, Handlebars, Bulma, CarMD API
 <h2>Clone or Download</h2>
 <ul>
 <li>Clone or download this repo to your local machine</li>
@@ -34,9 +36,30 @@ CarFacts is your all-in-one app to track all maintenance and modifications done 
 <ul>
 <li>Run the application by entering <code>npm start</code></li>
 </ul>
+
 <h1>Usage</h1>
 
+Signup or Login!
+![img]() or ![img]
+
+Add a Vehicle
+![img]()
+
+View All Vehicles
 ![Gif]()
+
+Record Maintenance
+![img]()
+<h1>Future Development</h1>
+<ul>
+  <li>Regional Groups</li>
+  <li>Make/Model Group Pages</li>
+  <li>Video Links for DYI Projects</li>
+  <li>Storing Pictures</li>
+  <li>Extend API Integration</li>
+  <li>Data Validation</li>
+  <li>Append to Maintenance Database</li>
+</ul>
 
 <h1>Contributing</h1>
 
@@ -54,6 +77,12 @@ CarFacts is your all-in-one app to track all maintenance and modifications done 
 </ul>
 
 <h1>FAQ</h1>
+<ul>
+<li><strong>How do I add create an account?</strong>
+<ul>
+<li>Click the Signup link in the navbar or burger menu. </li>
+</ul>
+</ul>
 
 <ul>
 <li><strong>How do I add my vehicle?</strong>
