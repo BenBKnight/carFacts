@@ -1,5 +1,7 @@
 <p><a href="https://lbesson.mit-license.org/"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT license"></a></p>
 
+<p>Deployed App:<a href="https://floating-stream-06188.herokuapp.com/"> Click Here!</p>
+
 <h1>CarFacts!</h1>
 
 <h1>Description</h1>
@@ -38,18 +40,24 @@ CarFacts is your all-in-one app to track all maintenance and modifications done 
 </ul>
 
 <h1>Usage</h1>
+Signup or Login to get started!
 
-Signup or Login!
-![img]() or ![img]
+![img](/public/images/signup.png)
+
+![img](/public/images/login.png)
 
 Add a Vehicle
-![img]()
+
+![img](/public/images/addVehicle.png)
 
 View All Vehicles
-![Gif]()
+
+![Gif](https://media.giphy.com/media/JobYVCvspvhqbhz0j2/giphy.gif)
 
 Record Maintenance
-![img]()
+
+![img](/public/images/newMaintenace.png)
+
 <h1>Future Development</h1>
 <ul>
   <li>Regional Groups</li>
